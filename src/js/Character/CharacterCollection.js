@@ -1,1 +1,0 @@
-CharacterCollection.js
