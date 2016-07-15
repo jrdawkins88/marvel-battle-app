@@ -1,5 +1,7 @@
 var Backbone = require('backbone');
 
+var mainController = require('../Main/mainController');
+
 var HomeView = Backbone.View.extend({
 
 	events: {
@@ -21,9 +23,8 @@ var HomeView = Backbone.View.extend({
 	handleClickStart: function () {
 		// same as
 		// window.location.hash = 'main'
-		Backbone.history.navigate('main', {
-			trigger: true
-		});
+		mainController.showMain();
+		Backbone.history.navigate('main');
 	}
 
 });
