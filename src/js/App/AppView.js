@@ -1,3 +1,5 @@
+// AppView contains the entire app. Shows Homeview initially.
+
 var Backbone = require('backbone');
 var HomeView = require('./HomeView');
 

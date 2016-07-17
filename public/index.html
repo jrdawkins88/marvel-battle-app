@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        .detail {
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+
+        .search {
+            display: none;
+        }
+
+        .search.is-visible {
+            display: block;
+        }
+
+        .log > li {
+            opacity: 0;
+            transition: all ease 500ms;
+            height: 0px;
+        }
+
+        .log > li.visible {
+            height: auto;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+	<!-- Script tag should be last element in the body. -->
+    <script type="text/javascript" src="battlemanager.js"></script>
+    <script type="text/javascript" src="messages.js"></script>
+    <script type="text/javascript">
+        BattleManager.addMessages(messages);
+    </script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

@@ -1,3 +1,5 @@
+// Contains the opening view with a Start button that will swap the region with MainView when clicked.
+
 var Backbone = require('backbone');
 
 var mainController = require('../Main/mainController');
@@ -21,8 +23,7 @@ var HomeView = Backbone.View.extend({
 	},
 
 	handleClickStart: function () {
-		// same as
-		// window.location.hash = 'main'
+		// same as window.location.hash = 'main'
 		mainController.showMain();
 		Backbone.history.navigate('main');
 	}

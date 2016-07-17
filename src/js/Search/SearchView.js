@@ -1,10 +1,6 @@
-// Will listen for a Backbone event called 'search' that
-// is passed a reference to the DetailView that triggered
-// the search.
+// Will listen for a Backbone event called 'search' that is passed a reference to the DetailView that triggered the search.
 
-// SearchView.prototype.open will take a callback function to execute whenever
-// a search result is clicked on. In addition, it will add a class to make it
-// visible.
+// SearchView.prototype.open will take a callback function to execute whenever a search result is clicked on. In addition, it will add a class to make it visible.
 
 var Backbone = require('backbone');
 
@@ -17,6 +13,10 @@ var SearchView = Backbone.View.extend({
 
     events: {
         'click .search-button': 'handleSearchClick'
+    },
+
+    initialize: function () {
+        this.collection = new CharacterCollection();
     },
 
     render: function () {
@@ -44,8 +44,6 @@ var SearchView = Backbone.View.extend({
         if (this.listView) {
             this.listView.remove();
         }
-
-        this.collection = new CharacterCollection();
 
         this.$el.addClass('is-visible');
         

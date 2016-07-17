@@ -15,7 +15,25 @@ var CharacterModel = Backbone.Model.extend({
     },
 
     parse: function (response) {
+        // If the model belongs to a collection
+        if (this.collection) {
+            // The response has already been parsed
+            return response;
+        }
         return response.data.results[0];
+    },
+
+    getThumbnail: function (variant) {
+        var thumb = this.get('thumbnail');
+        var image = thumb.path;
+
+        if (variant) {
+            image += '/' + variant;
+        }
+
+         image += '.' + thumb.extension;
+
+         return image;
     }
 
 });

@@ -26,6 +26,7 @@ var DetailView = Backbone.View.extend({
     template: function (data) {
         return `
             <span>${data.name}</span>
+            <span></span>
             <button class="select-button">Select a hero</button>
         `;
     },

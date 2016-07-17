@@ -1,3 +1,5 @@
+// Initially shows the first 20 characters from the API, then will load the
+
 var Backbone = require('backbone');
 
 var CharacterListItemView = require('./CharacterListItemView');
