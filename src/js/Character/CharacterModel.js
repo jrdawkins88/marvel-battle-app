@@ -2,11 +2,18 @@ var Backbone = require('backbone');
 
 var StatsModel = require('../Stats/StatsModel');
 var api = require('../API/api');
+var BattleCollection = require('../Battle/BattleCollection');
 
 var CharacterModel = Backbone.Model.extend({
 
     initialize: function () {
         this.stats = new StatsModel({ id: this.get('id') });
+        this.battles = new BattleCollection();
+        this.battles.fetch({
+            data: {
+                characterId: this.get('id')
+            }
+        });
         this.stats.fetch();
     },
 

@@ -2,6 +2,9 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 
+var WinnerView = require('../Winner/WinnerView');
+var BattleModel = require('./BattleModel');
+
 var BattleView = Backbone.View.extend({
 
 	className: 'battle',
@@ -20,9 +23,23 @@ var BattleView = Backbone.View.extend({
 	fight: function (character1, character2) {
 		// * use BattleManager to generate a fight between character1 and character2
 		// * display the results
-		var results = BattleManager.narrativeBattle(character1.stats.attributes, character2.stats.attributes);
 		var li;
 		var _this = this;
+		var results = BattleManager.narrativeBattle(character1.stats.attributes, character2.stats.attributes);
+
+		// Define left, right, and winner variables to pass into new BatteModel
+
+		var left = character1.get('id');
+		var right = character2.get('id');
+		var winner = null;
+
+		if (left === results.winner.id) {
+			winner = character1;
+		} else if (right === results.winner.id) {
+			winner = character2;
+		}
+
+		// console.log(results);
 		
 		for (var i = results.fightData.length - 1; i >= 0; i--) {
 			li = $('<li>');
@@ -36,6 +53,7 @@ var BattleView = Backbone.View.extend({
 
 			if (counter === 0) {
 				clearInterval(intervalId);
+				_this.showWinner(winner);
 			}
 
 			_this.$('.log')
@@ -47,8 +65,22 @@ var BattleView = Backbone.View.extend({
 
 		}, 2000);
 
-		// console.log(results);
-		// var winnerView = new WinnerView({ winner: winner });
+		var battleResults = new BattleModel({
+			left: left,
+			right: right,
+			winner: winner === null ? null : winner.get('id')
+		});
+
+
+		// Posts new instance of BattleModel (battleResults) to server
+		battleResults.save();
+		
+	},
+
+	showWinner: function (winner) {
+		var winnerView = new WinnerView({ model: winner });
+		winnerView.render();
+		this.$('.winner-slot').append(winnerView.$el);
 	},
 
 	reset: function () {

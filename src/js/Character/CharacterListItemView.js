@@ -28,6 +28,7 @@ var CharacterListItemView = Backbone.View.extend({
 
     template: function (data) {
         return `
+            <img class="sm-image" src="#">
             <span>${data.name}</span>
         `;
     },
