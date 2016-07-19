@@ -9,8 +9,8 @@
 	padding: 1em;
 
 	h2 {
-		text-align: right;
-		margin: 60px 0;
+		text-align: center;
+		margin-top: 1.5em;
 		font-size: 2.25em;
 	}
 
@@ -30,8 +30,11 @@
 		.portrait.reveal {
 			width: 30%;
 			height: 30%;
-			top: 1em;
-			left: 1em;
+			top: -70px;
+			left: 50%;
+			transform: translateX(-50%);
+			// top: -50%;
+			// left: 50%;
 			border-top-left-radius: 50%;
 			border-top-right-radius: 50%;
 			border-bottom-left-radius: 50%;
@@ -50,5 +53,21 @@
 		bottom: 0;
 		left: 50%;
 		transform: translateY(100%) translateX(-50%);
+	}
+
+	ul {
+		font-size: 0.5em;
+
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			display: block;
+			padding: 0.5em;
+			margin: 3px;
+			background-color: #ccc;
+		}
+
 	}
 }
