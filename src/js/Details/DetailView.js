@@ -25,15 +25,17 @@ var DetailView = Backbone.View.extend({
                 losses: this.model.getLosses().length,
                 stats: this.model.stats.toJSON()
             }));
+            this.$('.portrait').css('background-image', 'url(' + this.model.getThumbnail('portrait_uncanny') + ')');
         } else {
             this.$el.html(this.emptyTemplate());
+            this.$('.portrait').css('background-image', 'url(images/placeholder.jpg)');
         }
     },
 
     template: function (data) {
         return `
-            <img src="${this.model.getThumbnail('portrait_uncanny')}" class="lg-image">
-            <h1 class="detail-name">${data.name}</h1>
+            <div class="portrait reveal"></div>
+            <h2 class="detail-name">${data.name}</h2>
             <p>${data.description}</p>
             <span>Wins: ${data.wins}</span>
             <span>Losses: ${data.losses}</span>
@@ -50,7 +52,10 @@ var DetailView = Backbone.View.extend({
     },
 
     emptyTemplate: function () {
-        return `<button class="select-button">Select a hero</button>`;
+        return `
+            <div class="portrait"></div>
+            <button class="select-button">Select a hero</button>
+        `;
     },
 
     handleSelectClick: function () {
