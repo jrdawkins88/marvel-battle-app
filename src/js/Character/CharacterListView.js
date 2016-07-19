@@ -17,6 +17,8 @@ var CharacterListView = Backbone.View.extend({
 
     tagName: 'ul',
 
+    className: 'character-list',
+
     initialize: function (options) {
         this.onItemClick = options.onItemClick;
         // 'update' triggers when the collection has been successfully fetched

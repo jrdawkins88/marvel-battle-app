@@ -1,0 +1,33 @@
+.home {
+	position: relative;
+
+	.hero-image {
+		width: 100%;
+		display: block;
+		border-top: solid 5px $color-black;
+	}
+
+	p {
+		font-family: 'Sigmar One', sans-serif;
+		color: $color-yellow;
+		font-size: 2em;
+		@include comicText();
+		text-align: center;
+	}
+
+	button.start {
+		-webkit-appearance: none;
+		border: 0;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		width: 500px;
+		height: 200px;
+		background-image: url(images/start-button.png);
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	padding-bottom: 50px;
+}

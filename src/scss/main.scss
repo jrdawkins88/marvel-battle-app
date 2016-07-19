@@ -1,0 +1,10 @@
+@import '../../lib/normalize';
+@import 'vars';
+@import 'mixins';
+@import 'components/app';
+@import 'components/header';
+@import 'components/home';
+
+body {
+	background-color: $color-blue;
+}
