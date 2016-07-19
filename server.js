@@ -66,4 +66,4 @@ app.post('/battles', function (req, res) {
 	res.json(newBattle);
 });
 
-app.listen(8000); //pass the port we need to run server on
+app.listen(process.env.PORT || 8000); //pass the port we need to run server on
