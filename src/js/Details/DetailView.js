@@ -30,10 +30,11 @@ var DetailView = Backbone.View.extend({
 
     template: function (data) {
         return `
-            <span>${data.name}</span>
+            <img src="#" class="lg-image">
+            <h1 class="detail-name">${data.name}</h1>
+            <p>${data.description}</p>
             <span>Wins: ${data.wins}</span>
             <span>Losses: ${data.losses}</span>
-            <span></span>
             <button class="select-button">Select a hero</button>
         `;
     },
