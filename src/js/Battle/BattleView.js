@@ -54,6 +54,9 @@ var BattleView = Backbone.View.extend({
 			if (counter === 0) {
 				clearInterval(intervalId);
 				_this.showWinner(winner);
+				// Add the results from outer scope to the battles of character1 and character2
+				character1.battles.add(battleResults);
+				character2.battles.add(battleResults);
 			}
 
 			_this.$('.log')
@@ -71,10 +74,8 @@ var BattleView = Backbone.View.extend({
 			winner: winner === null ? null : winner.get('id')
 		});
 
-
 		// Posts new instance of BattleModel (battleResults) to server
 		battleResults.save();
-		
 	},
 
 	showWinner: function (winner) {
@@ -85,6 +86,7 @@ var BattleView = Backbone.View.extend({
 
 	reset: function () {
 		this.$('.log').empty();
+		this.$('.winner-slot').empty();
 	}
 
 });

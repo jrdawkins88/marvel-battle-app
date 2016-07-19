@@ -10,6 +10,41 @@ var MainView = Backbone.View.extend({
 		'click .fight-button': 'handleFightClick'
 	},
 
+	initialize: function (options) {
+		var _this = this;
+
+		Backbone.on('battle:reset', this.resetBattle.bind(this));
+
+		this.searchView = new SearchView();
+		this.battleView = new BattleView();
+
+		this.details = [
+			this.createDetailView(),
+			this.createDetailView()
+		];
+	},
+
+	render: function () {
+		var _this = this;
+		this.$el.html(this.template());
+		this.searchView.render();
+		this.battleView.render();
+		this.$('.search-region').append(this.searchView.$el);
+		this.details.forEach(function (view) {
+			_this.$('.detail-region').append(view.$el);
+			view.render();
+		});
+	},
+
+	template: function () {
+		return `
+			<div class="detail-region"></div>
+			<button class="fight-button">Fight!</button>
+			<div class="search-region"></div>
+			<div class="battle-region"></div>
+		`;
+	},
+
 	createDetailView: function () {
 		var _this = this;
 		var view = new DetailView({
@@ -57,39 +92,6 @@ var MainView = Backbone.View.extend({
 		Backbone.history.navigate(url);
 	},
 
-	initialize: function (options) {
-		var _this = this;
-
-		this.searchView = new SearchView();
-		this.battleView = new BattleView();
-
-		this.details = [
-			this.createDetailView(),
-			this.createDetailView()
-		];
-	},
-
-	render: function () {
-		var _this = this;
-		this.$el.html(this.template());
-		this.searchView.render();
-		this.battleView.render();
-		this.$('.search-region').append(this.searchView.$el);
-		this.details.forEach(function (view) {
-			_this.$('.detail-region').append(view.$el);
-			view.render();
-		});
-	},
-
-	template: function () {
-		return `
-			<div class="detail-region"></div>
-			<button class="fight-button">Fight!</button>
-			<div class="search-region"></div>
-			<div class="battle-region"></div>
-		`;
-	},
-
 	handleFightClick: function () {
 		var left = this.details[0].model;
 		var right = this.details[1].model;
@@ -108,6 +110,10 @@ var MainView = Backbone.View.extend({
 
 		this.$('.battle-region').append(this.battleView.$el);
 		this.battleView.fight(this.details[0].model, this.details[1].model);
+	},
+
+	resetBattle: function () {
+		this.battleView.reset();
 	}
 
 });

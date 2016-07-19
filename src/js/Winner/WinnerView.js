@@ -6,9 +6,11 @@ var Backbone = require('backbone');
 var WinnerView = Backbone.View.extend({
 
 	events: {
-
 		'click .go-again': 'handleGoAgain'
+	},
 
+	initialize: function (options) {
+		this.onGoAgainClick = options.onGoAgainClick;
 	},
 
 	render: function () {
@@ -34,13 +36,7 @@ var WinnerView = Backbone.View.extend({
 	},
 
 	handleGoAgain: function () {
-		// mainController.showMain();
-		Backbone.history.navigate('main');
-		this.reset();
-	},
-
-	reset: function () {
-		this.$('.winner-slot').empty();
+		Backbone.trigger('battle:reset');
 	}
 	
 });

@@ -20,8 +20,10 @@ var DetailView = Backbone.View.extend({
         if (this.model) {
             this.$el.html(this.template({
                 name: this.model.get('name'),
+                description: this.model.get('description'),
                 wins: this.model.getWins().length,
-                losses: this.model.getLosses().length
+                losses: this.model.getLosses().length,
+                stats: this.model.stats.toJSON()
             }));
         } else {
             this.$el.html(this.emptyTemplate());
@@ -30,11 +32,19 @@ var DetailView = Backbone.View.extend({
 
     template: function (data) {
         return `
-            <img src="#" class="lg-image">
+            <img src="${this.model.getThumbnail('portrait_uncanny')}" class="lg-image">
             <h1 class="detail-name">${data.name}</h1>
             <p>${data.description}</p>
             <span>Wins: ${data.wins}</span>
             <span>Losses: ${data.losses}</span>
+            <ul>
+                <li style="width: ${data.stats.strength / 7 * 100}%">Strength: ${data.stats.strength}</li>
+                <li style="width: ${data.stats.durability / 7 * 100}%">Durability: ${data.stats.durability}</li>
+                <li style="width: ${data.stats.fighting / 7 * 100}%">Fighting: ${data.stats.fighting}</li>
+                <li style="width: ${data.stats.energy / 7 * 100}%">Energy: ${data.stats.energy}</li>
+                <li style="width: ${data.stats.speed / 7 * 100}%">Speed: ${data.stats.speed}</li>
+                <li style="width: ${data.stats.intelligence / 7 * 100}%">Intelligence: ${data.stats.intelligence}</li>
+            </ul>
             <button class="select-button">Select a hero</button>
         `;
     },
@@ -49,11 +59,13 @@ var DetailView = Backbone.View.extend({
 
     setCharacter: function (character) {
         if (this.model) {
-            this.model.battles.off('update', this.render);
+            this.model.battles.off('update add', this.render);
+            this.model.stats.off('sync', this.render);
         }
         this.model = character;
         // Re-render once the battles have been fetched
-        this.model.battles.on('update', this.render);
+        this.model.battles.on('update add', this.render);
+        this.model.stats.on('sync', this.render);
         this.render();
     }
 
