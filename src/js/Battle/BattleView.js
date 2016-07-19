@@ -86,6 +86,7 @@ var BattleView = Backbone.View.extend({
 
 	reset: function () {
 		this.$('.log').empty();
+		this.$('.winner-slot').empty();
 	}
 
 });

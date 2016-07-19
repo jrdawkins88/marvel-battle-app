@@ -38,6 +38,7 @@ var SearchView = Backbone.View.extend({
                 nameStartsWith: this.$('.starts-with').val()
             }
         });
+        this.$('.starts-with').val('');
     },
 
     open: function (onItemClick) {
