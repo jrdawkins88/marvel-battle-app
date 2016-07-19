@@ -7,6 +7,8 @@ var Backbone = require('backbone');
 
 var CharacterListItemView = Backbone.View.extend({
 
+    className: 'character-item',
+
     tagName: 'li',
 
     events: {
@@ -15,8 +17,9 @@ var CharacterListItemView = Backbone.View.extend({
 
     initialize: function (options) {
         this.onClick = options.onClick;
+        // If the stats model is updated
+        this.model.stats.once('sync', this.render.bind(this));
     },
-
 
     render: function () {
         // render every item in this.collection as a CharacterListItemView
@@ -24,6 +27,12 @@ var CharacterListItemView = Backbone.View.extend({
             name: this.model.get('name'),
             portrait: ''
         }));
+
+        if (!this.model.stats.loaded) {
+            this.$el.addClass('disabled');
+        } else {
+            this.$el.removeClass('disabled');
+        }
     },
 
     template: function (data) {
@@ -34,7 +43,9 @@ var CharacterListItemView = Backbone.View.extend({
     },
 
     handleClick: function () {
-        this.onClick(this.model);
+        if (this.model.stats.loaded) {
+            this.onClick(this.model);
+        }
     }
 
 });

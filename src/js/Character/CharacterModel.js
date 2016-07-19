@@ -7,14 +7,16 @@ var BattleCollection = require('../Battle/BattleCollection');
 var CharacterModel = Backbone.Model.extend({
 
     initialize: function () {
+        // Get the character's stats
         this.stats = new StatsModel({ id: this.get('id') });
+        this.stats.fetch();
+        // Get the character's battles
         this.battles = new BattleCollection();
         this.battles.fetch({
             data: {
                 characterId: this.get('id')
             }
         });
-        this.stats.fetch();
     },
 
     url: function () {
@@ -41,6 +43,24 @@ var CharacterModel = Backbone.Model.extend({
          image += '.' + thumb.extension;
 
          return image;
+    },
+
+    getWins: function () {
+        var _this = this;
+        // use this.battles to return any that are wins
+        return this.battles.filter(function (battle) {
+            return battle.get('winner') === _this.get('id');
+        });
+    },
+
+    getLosses: function () {
+        // use this.battles to return any that are losses
+        var _this = this;
+        // use this.battles to return any that are wins
+        return this.battles.filter(function (battle) {
+            var winner = battle.get('winner');
+            return winner !== null && winner !== _this.get('id');
+        });  
     }
 
 });

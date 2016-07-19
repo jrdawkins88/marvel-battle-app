@@ -26,13 +26,27 @@ app.get('/stats/:id', function (req, res) {
 		return obj.id === id;  // meaning when this expression evaluates to true
 	});
 
+	if (!stat) {
+		res.sendStatus(404);
+		return;
+	}
+
 	res.json(stat);
 });
 
 // GET: /battles
 // Respond with a list of battles.
 app.get('/battles', function (req, res) {
-	res.json(db.battles);
+	var battles = db.battles;
+	var characterId = parseInt(req.query.characterId); // Would get the value of ?characterId=value
+	
+	if (characterId) {
+		battles = battles.filter(function (battle) {
+			return battle.left === characterId || battle.right === characterId;
+		});
+	}
+
+	res.json(battles);
 });
 
 // POST: /battles
