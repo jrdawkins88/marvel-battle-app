@@ -6,6 +6,8 @@ var mainController = require('../Main/mainController');
 
 var HomeView = Backbone.View.extend({
 
+	className: 'home',
+
 	events: {
 		'click .start': 'handleClickStart'
 	},
@@ -16,9 +18,9 @@ var HomeView = Backbone.View.extend({
 
 	template: function () {
 		return `
-			<img class="hero-image" src="#">
-			<p>Some kind of cool description of the ensuing battles to come</p>
-			<button class="start">Start</button>
+			<p>Pit Your Favorite Marvel Characters Against Each Other In An Epic Battle</p>
+			<img class="hero-image" src="images/roster.png">
+			<button class="start"></button>
 		`;
 	},
 

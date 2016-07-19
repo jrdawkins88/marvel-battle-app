@@ -5,6 +5,8 @@ var HomeView = require('./HomeView');
 
 var AppView = Backbone.View.extend({
 
+	className: 'app',
+
 	initialize: function () {
 		var _this = this;
 		this.homeView = new HomeView();
@@ -21,8 +23,7 @@ var AppView = Backbone.View.extend({
 	template: function () {
 		return `
 			<header class="header">
-				<img id="logo" src="#">
-				<h1>The Marvel Battle Royale</h1>
+				<img id="logo" src="images/logo.png">
 			</header>
 			<main class="page-region"></main>
 		`;

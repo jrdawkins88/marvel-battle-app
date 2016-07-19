@@ -1,0 +1,24 @@
+.header {
+	text-align: center;
+	margin-top: 30px;
+	> img {
+		position: relative;
+		z-index: 1;
+	}
+
+}
+
+.header:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	z-index: 0;
+	background-color: $color-yellow;
+	border-color: $color-black;
+	border-top: solid 5px;
+	border-bottom: solid 5px;
+}
