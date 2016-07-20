@@ -21,8 +21,8 @@ var HomeView = Backbone.View.extend({
 			<header class="header">
 				<img id="logo" src="images/logo.png">
 			</header>
-			<p>Pit Your Favorite Marvel Characters Against Each Other In An Epic Battle</p>
-			<img class="hero-image" src="images/roster.png">
+			<p class="headline">Pit Your Favorite Marvel Characters Against Each Other In An Epic Battle</p>
+			<div class="hero-image"></div>
 			<button class="start"></button>
 		`;
 	},

@@ -1,10 +1,12 @@
 @import '../../lib/normalize';
 @import 'vars';
 @import 'mixins';
+@import 'components/clearfix';
 @import 'components/app';
 @import 'components/header';
 @import 'components/home';
 @import 'components/detail';
+@import 'components/search';
 @import 'components/main';
 @import 'components/character-item';
 @import 'components/character-list';

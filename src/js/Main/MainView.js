@@ -6,6 +6,8 @@ var BattleView = require('../Battle/BattleView');
 
 var MainView = Backbone.View.extend({
 
+	className: 'main',
+
 	events: {
 		'click .fight-button': 'handleFightClick'
 	},
@@ -41,8 +43,9 @@ var MainView = Backbone.View.extend({
 			<header class="header small">
 				<img id="logo" src="images/logo.png">
 			</header>
-			<div class="detail-region"></div>
-			<button class="fight-button">Fight!</button>
+			<h1 class="headline">Choose Your Opponents</h1>
+			<div class="detail-region cf"></div>
+			<button class="fight-button"></button>
 			<div class="search-region"></div>
 			<div class="battle-region"></div>
 		`;

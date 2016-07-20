@@ -1,5 +1,18 @@
 .character-item {
 	display: inline-block;
+	width: 140px;
+	margin-right: 1em;
+
+	img {
+		width: 100%;
+		display: block;
+	}
+
+	div {
+		overflow: hidden;
+		width: 100%;
+		text-overflow: ellipsis;
+	}
 }
 
 .character-item.disabled {

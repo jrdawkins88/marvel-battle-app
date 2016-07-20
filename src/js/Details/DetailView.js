@@ -39,14 +39,17 @@ var DetailView = Backbone.View.extend({
             <p>${data.description}</p>
             <span>Wins: ${data.wins}</span>
             <span>Losses: ${data.losses}</span>
-            <ul>
-                <li style="width: ${data.stats.strength / 7 * 100}%">Strength: ${data.stats.strength}</li>
-                <li style="width: ${data.stats.durability / 7 * 100}%">Durability: ${data.stats.durability}</li>
-                <li style="width: ${data.stats.fighting / 7 * 100}%">Fighting: ${data.stats.fighting}</li>
-                <li style="width: ${data.stats.energy / 7 * 100}%">Energy: ${data.stats.energy}</li>
-                <li style="width: ${data.stats.speed / 7 * 100}%">Speed: ${data.stats.speed}</li>
-                <li style="width: ${data.stats.intelligence / 7 * 100}%">Intelligence: ${data.stats.intelligence}</li>
-            </ul>
+            <div class="stats">
+                <ul>
+                    <li class="force"></li>
+                    <li style="height: ${data.stats.strength / 7 * 100}%">Strength</li>
+                    <li style="height: ${data.stats.durability / 7 * 100}%">Durability</li>
+                    <li style="height: ${data.stats.fighting / 7 * 100}%">Fighting</li>
+                    <li style="height: ${data.stats.energy / 7 * 100}%">Energy</li>
+                    <li style="height: ${data.stats.speed / 7 * 100}%">Speed</li>
+                    <li style="height: ${data.stats.intelligence / 7 * 100}%">Intelligence</li>
+                </ul>
+            </div>
             <button class="select-button">Select a hero</button>
         `;
     },

@@ -3,6 +3,7 @@
 	> img {
 		position: relative;
 		z-index: 1;
+		height: 128px;
 	}
 
 }
@@ -11,21 +12,23 @@
 	content: '';
 	display: block;
 	position: absolute;
-	top: 60px;
+	top: 35px;
 	left: 0;
-	height: 50px;
+	height: 35px;
 	width: 100%;
 	z-index: 0;
 	background-color: $color-yellow;
 	border-color: $color-black;
-	border-top: solid 5px;
-	border-bottom: solid 5px;
+	border-top: solid 3px;
+	border-bottom: solid 3px;
 }
 
 .header.small {
 	text-align: left;
 	> img {
 		height: 100px;
+		margin-top: -20px;
+		padding-left: 1.5em;
 	}
 }
 

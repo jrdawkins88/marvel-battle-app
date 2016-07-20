@@ -2,17 +2,35 @@
 	position: relative;
 
 	.hero-image {
-		width: 100%;
-		display: block;
-		border-top: solid 5px $color-black;
+		// background-image: url("images/roster.png");
+		// margin: 0;
+		// padding: 0;
+		// height: 500px;
+		// width: 100%;
+		// display: block;
+		// background-size: cover;
+		// background-position: center center;
+		// border-top: solid 5px $color-black;
 	}
 
-	p {
+	.headline {
 		font-family: 'Sigmar One', sans-serif;
 		color: $color-yellow;
-		font-size: 2em;
+		font-size: 4em;
 		@include comicText();
+	}
+
+	p.headline {
 		text-align: center;
+		padding-top: 140px;
+		padding-bottom: 140px;
+		background-image: url("images/roster2.jpg");
+		background-size: cover;
+		background-position: center center;
+		border-top: solid 5px $color-black;
+		height: 550px;
+		width: 100%;
+		margin-top: 20px;
 	}
 
 	button.start {
@@ -20,14 +38,21 @@
 		border: 0;
 		background-color: transparent;
 		background-repeat: no-repeat;
-		width: 500px;
-		height: 200px;
+		width: 300px;
+		height: 125px;
 		background-image: url(images/start-button.png);
+		background-size: contain;
 		position: absolute;
-		bottom: 0;
+		bottom: 10px;
 		left: 50%;
 		transform: translateX(-50%);
-	}
+		}
+
+		button.start:hover {
+			bottom: 20px;
+			width: 350px;
+			height: 135px;
+		}
 
 	padding-bottom: 50px;
 }
