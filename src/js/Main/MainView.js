@@ -1,13 +1,17 @@
+// ultimately contains both detailViews, the searchView, the battleView, and the winnerView
+
 var Backbone = require('backbone');
 
 var SearchView = require('../Search/SearchView');
 var DetailView = require('../Details/DetailView');
 var BattleView = require('../Battle/BattleView');
+// var mainController = require('./mainController');
 
 var MainView = Backbone.View.extend({
 
 	events: {
 		'click .fight-button': 'handleFightClick'
+		// 'click .header.small': 'handleClickHome'  //<--- trying to make the logo a link back to the home view
 	},
 
 	initialize: function (options) {
@@ -37,7 +41,9 @@ var MainView = Backbone.View.extend({
 	},
 
 	template: function () {
+		// the empty regions that will contain the views
 		return `
+			<h1 class="headline">Choose Your Opponents</h1>
 			<div class="detail-region"></div>
 			<button class="fight-button">Fight!</button>
 			<div class="search-region"></div>
@@ -53,9 +59,9 @@ var MainView = Backbone.View.extend({
 				// Reset the BattleView if it has any contents
 				_this.battleView.reset();
 				// Open the SearchView and pass a callback function to tell it what to tell the CharacterListView to do when one of its CharacterListItemViews is clicked.
-				_this.searchView.open(function onItemClick(character) {
+				_this.searchView.open(function onItemClick(characterModel) {
 					// Pass the character that was clicked on to the DetailView
-					view.setCharacter(character);
+					view.setCharacter(characterModel);
 
 					// Close the search
 					_this.searchView.close();
@@ -113,8 +119,16 @@ var MainView = Backbone.View.extend({
 	},
 
 	resetBattle: function () {
+		// reset function is defined in BattleView
 		this.battleView.reset();
 	}
+
+	// handleClickHome: function () {
+	// 	// changes the view to HomeView.
+	// 	// same as window.location.hash = 'main'  //<--- trying to make the logo a link back to the home view
+	// 	mainController.showHome();
+	// 	Backbone.history.navigate('');
+	// }
 
 });
 

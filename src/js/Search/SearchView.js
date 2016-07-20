@@ -41,25 +41,35 @@ var SearchView = Backbone.View.extend({
         this.$('.starts-with').val('');
     },
 
+    // open() creates a CharacterListView and renders it. open() passes the CharacterListView
+    // a callback function that was passed into itself. This function (onItemClick) describes
+    // what should happen when one of the search results is clicked.
     open: function (onItemClick) {
+        // Remove the search results that were previously there.
         if (this.listView) {
             this.listView.remove();
         }
 
+        // Display the element.
         this.$el.addClass('is-visible');
         
+        // Create a new list of search results.
         this.listView = new CharacterListView({
             collection: this.collection,
-            onItemClick: onItemClick
+            onItemClick: onItemClick // This is where we pass the callback function that was passed into open();
         });
 
+        // Fetch the collection (to show some initial results).
         this.collection.fetch();
         
+        // Render the search results.
         this.listView.render();
 
+        // Append it to the DOM.
         this.$('.list-region').append(this.listView.$el);
     },
 
+    // close() will simply remove the is-visible class, hiding the element.
     close: function () {
         this.$el.removeClass('is-visible');
     }

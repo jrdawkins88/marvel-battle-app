@@ -1,3 +1,5 @@
+// The router connects the urls to actions and events.
+
 var Backbone = require('backbone');
 
 var main = require('../Main/mainController');
