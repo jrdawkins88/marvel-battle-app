@@ -7,6 +7,7 @@ var AppView = Backbone.View.extend({
 
 	className: 'app',
 
+	// creates a new instance of HomeView and shows it
 	initialize: function () {
 		var _this = this;
 		this.homeView = new HomeView();
@@ -16,6 +17,7 @@ var AppView = Backbone.View.extend({
 	},
 
 	render: function () {
+		// builds the html with the template
 		this.$el.html(this.template());
 		this.show(this.homeView);
 	},
@@ -27,14 +29,17 @@ var AppView = Backbone.View.extend({
 	},
 
 	show: function (view) {
+		// clear out the div.page-region if there's a view in it
 		if (this.pageView) {
 			this.pageView.remove();
 		}
 
 		this.pageView = view;
 
+		// render the pageView
 		view.render();
 
+		// append it to the div.page-region
 		this.$('.page-region').append(view.$el);
 	}
 

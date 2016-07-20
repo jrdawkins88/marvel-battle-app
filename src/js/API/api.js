@@ -1,3 +1,5 @@
+// Here's our base url so we don't have to keep typing it out.
+
 module.exports = {
 
     apiKey: '4e6d4f5f0999bcfb27c1d02701df600a',

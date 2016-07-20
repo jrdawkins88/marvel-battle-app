@@ -12,6 +12,7 @@ var HomeView = Backbone.View.extend({
 		'click .start': 'handleClickStart'
 	},
 
+	// renders the HomeView with the template
 	render: function () {
 		this.$el.html(this.template());
 	},
@@ -28,6 +29,7 @@ var HomeView = Backbone.View.extend({
 	},
 
 	handleClickStart: function () {
+		// changes the view to MainView using the showMain function from mainController
 		// same as window.location.hash = 'main'
 		mainController.showMain();
 		Backbone.history.navigate('main');

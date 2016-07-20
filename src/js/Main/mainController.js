@@ -1,6 +1,9 @@
+// contains the functions needed to build the left and right detailViews on in the mainView
+
 var Backbone = require('backbone');
 
 var MainView = require('./MainView');
+// var HomeView = require('../App/HomeView');
 var CharacterModel = require('../Character/CharacterModel');
 
 module.exports = {
@@ -34,5 +37,10 @@ module.exports = {
 
 		Backbone.trigger('app:show', view);
 	}
+
+    // showHome: function () {
+    //     var view = new HomeView();
+    //     Backbone.trigger('app:show', view);  //<--- trying to make the logo a link back to the home view
+    // }
 
 };
