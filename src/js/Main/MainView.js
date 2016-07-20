@@ -38,6 +38,9 @@ var MainView = Backbone.View.extend({
 
 	template: function () {
 		return `
+			<header class="header small">
+				<img id="logo" src="images/logo.png">
+			</header>
 			<div class="detail-region"></div>
 			<button class="fight-button">Fight!</button>
 			<div class="search-region"></div>

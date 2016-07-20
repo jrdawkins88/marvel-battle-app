@@ -1,3 +1,7 @@
 .character-item {
 	display: inline-block;
 }
+
+.character-item.disabled {
+    display: none;
+}

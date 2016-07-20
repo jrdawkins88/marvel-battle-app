@@ -18,6 +18,9 @@ var HomeView = Backbone.View.extend({
 
 	template: function () {
 		return `
+			<header class="header">
+				<img id="logo" src="images/logo.png">
+			</header>
 			<p>Pit Your Favorite Marvel Characters Against Each Other In An Epic Battle</p>
 			<img class="hero-image" src="images/roster.png">
 			<button class="start"></button>

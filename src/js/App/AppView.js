@@ -22,9 +22,6 @@ var AppView = Backbone.View.extend({
 
 	template: function () {
 		return `
-			<header class="header">
-				<img id="logo" src="images/logo.png">
-			</header>
 			<main class="page-region"></main>
 		`;
 	},

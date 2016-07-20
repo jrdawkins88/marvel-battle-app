@@ -16,6 +16,7 @@ module.exports = {
                 success: function () {
                     // Set the left (0) view's CharacterModel
                     view.details[0].setCharacter(leftModel);
+                    view.updateButton();
                 }
             });
         }
@@ -26,6 +27,7 @@ module.exports = {
                 success: function () {
                     // Set the right (1) view's CharacterModel
                     view.details[1].setCharacter(rightModel);
+                    view.updateButton();
                 }
             });
         }
