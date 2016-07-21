@@ -19,11 +19,14 @@ var MainView = Backbone.View.extend({
 	initialize: function (options) {
 		var _this = this;
 
+		// clear the battle-region
 		Backbone.on('battle:reset', this.resetBattle.bind(this));
 
+		// create a new search view and battleview
 		this.searchView = new SearchView();
 		this.battleView = new BattleView();
 
+		// 
 		this.details = [
 			this.createDetailView(),
 			this.createDetailView()
@@ -56,6 +59,7 @@ var MainView = Backbone.View.extend({
 		`;
 	},
 
+	// creates a new detail view and sets the selected character model for each one
 	createDetailView: function () {
 		var _this = this;
 		var view = new DetailView({

@@ -53,16 +53,20 @@
 		background-image: url(images/fightbanner.png);
 		background-repeat: no-repeat;
 		background-size: contain;
-		height: 250px;
-		width: 150px;
+		width: 20%;
 		border: none;
 		margin: 0 auto;
 		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
+		padding-top: 20%;
+		left: 40%;
+		bottom: 0;
+		z-index: 100;
+		transition: all 0.2s ease;
+		// transform: translateX(-50%);
+		outline: none;
 	}
 
 	.fight-button:hover {
-		
+		transform: scale(1.2);
 	}
 }

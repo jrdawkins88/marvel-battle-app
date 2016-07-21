@@ -42,16 +42,16 @@
 		height: 150px;
 		background-image: url(images/start-button.png);
 		background-size: contain;
-		position: absolute;
-		bottom: 10px;
+		position: fixed;
+		bottom: 0;
 		left: 50%;
 		transform: translateX(-50%);
 		}
 
 		button.start:hover {
 			bottom: 20px;
-			width: 350px;
-			height: 135px;
+			width: 450px;
+			height: 250px;
 		}
 
 	padding-bottom: 50px;

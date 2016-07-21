@@ -11,6 +11,21 @@
 @import 'components/character-item';
 @import 'components/character-list';
 
+@font-face {
+  font-family: 'Sigmar One';
+  src: url('fonts/SigmarOne.ttf');
+}
+
+@font-face {
+  font-family: 'AnimeAce Regular';
+  src: url('fonts/animeace2_reg.otf');
+}
+
+@font-face {
+  font-family: 'AnimeAce Bold';
+  src: url('fonts/animeace2_bld.ttf');
+}
+
 *, *:before, *:after {
 	box-sizing: border-box;
 }
