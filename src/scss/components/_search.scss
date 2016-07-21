@@ -1,13 +1,15 @@
 .search {
-	padding-top: 1em;
+	padding-top: 2em;
 	background-color: $color-yellow;
-	margin-top: 1em;
+	margin-top: 3em;
 	border: 2px solid $color-black;
 }
-
+// Changeeed Padddinng!!!!!!!
 .search-region {
+	padding-top: 1em; 
 }
 
 .list-region {
-	
+	position: relative; 
+	bottom: 20px; 
 }
