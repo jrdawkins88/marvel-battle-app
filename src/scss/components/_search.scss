@@ -4,7 +4,7 @@
 	margin-top: 3em;
 	border: 2px solid $color-black;
 }
-// Changeeed Padddinng!!!!!!!
+
 .search-region {
 	padding-top: 1em; 
 }
@@ -12,4 +12,24 @@
 .list-region {
 	position: relative; 
 	bottom: 20px; 
+}
+
+input.starts-with {
+	border: 3.5px solid $color-black; 
+	// text-align: center; 
+	margin-left: 40%; 
+	margin-bottom: 1em; 
+	height: 2.5em; 
+	width: 15em; 
+	font-family: 'AnimeAce Bold';
+	// font-size:18px; 
+
+}
+
+.search-button {
+	border:3.5px solid $color-black; 
+	// height: 2.7em; 
+	font-family: 'AnimeAce Bold';
+	line-height: 1.6em; 
+	padding-bottom: 6px; 
 }

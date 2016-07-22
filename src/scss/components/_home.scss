@@ -45,15 +45,13 @@
 		background-size: contain;
 		position: fixed;
 		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		}
+		left: 37.5%;
+	}
 
-		button.start:hover {
-			// bottom: 20px;
-			width: 450px;
-			height: 250px;
-		}
+	button.start:hover {
+		bottom: 10px;
+		width: 450px;
+	}
 
-	padding-bottom: 50px;
+	
 }
