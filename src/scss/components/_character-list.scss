@@ -1,4 +1,9 @@
 .character-list {
 	overflow-x: scroll;
 	white-space: nowrap;
+
+::-webkit-scrollbar:horizontal {
+    color:red; 
+ }
 }
+
