@@ -5,6 +5,8 @@ var Backbone = require('backbone');
 
 var WinnerView = Backbone.View.extend({
 
+	className: 'winner',
+
 	events: {
 		'click .go-again': 'handleGoAgain'
 	},

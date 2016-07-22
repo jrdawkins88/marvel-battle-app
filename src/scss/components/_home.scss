@@ -1,18 +1,6 @@
 .home {
 	position: relative;
 
-	.hero-image {
-		// background-image: url("images/roster.png");
-		// margin: 0;
-		// padding: 0;
-		// height: 500px;
-		// width: 100%;
-		// display: block;
-		// background-size: cover;
-		// background-position: center center;
-		// border-top: solid 5px $color-black;
-	}
-
 	.headline {
 		font-family: 'Sigmar One', sans-serif;
 		color: $color-yellow;
@@ -38,7 +26,6 @@
 		border: 0;
 		background-color: transparent;
 		background-repeat: no-repeat;
-		background-position: bottom;
 		width: 400px;
 		height: 150px;
 		background-image: url(images/start-button.png);
@@ -49,7 +36,7 @@
 	}
 
 	button.start:hover {
-		bottom: 10px;
+	bottom: 10px;
 		transform: scale(1.1);
 	}
 

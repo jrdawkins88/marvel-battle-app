@@ -15,8 +15,8 @@ var BattleView = Backbone.View.extend({
 
 	template: function () {
 		return `
-			<ul class="log"></ul>
 			<div class="winner-slot"></div>
+			<ul class="log"></ul>
 		`;
 	},
 
