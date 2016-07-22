@@ -19,7 +19,7 @@ input.starts-with {
 	// text-align: center; 
 	margin-left: 40%; 
 	margin-bottom: 1em; 
-	height: 2.5em; 
+	height: 2.4em; 
 	width: 15em; 
 	font-family: 'AnimeAce Bold';
 	// font-size:18px; 
@@ -30,8 +30,25 @@ input.starts-with {
 	border:3.5px solid $color-black; 
 	// height: 2.7em; 
 	font-family: 'AnimeAce Bold';
-	line-height: 1.6em; 
+	line-height: 1.4em; 
 	padding-bottom: 6px; 
+	padding-top:4px; 
+	opacity:1; 
+}
+
+.search-button:hover {
+	opacity:.5; 
+}
+
+.character-item div {
+	font-family: 'AnimeAce Bold';
+	font-size:12px; 
+	padding-top: 8px; 
+	padding-bottom:16px; 
+}
+
+.sm-image {
+	border:2px solid $color-black; 
 }
 
 .sm-image {

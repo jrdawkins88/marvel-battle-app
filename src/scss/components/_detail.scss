@@ -104,6 +104,11 @@
 		border: 4px solid $color-black;
 		transform: translateY(150%) translateX(-50%);
 		font-family: 'AnimeAce Bold';
+		opacity: 1; 
+	}
+
+	.select-button:hover {
+		opacity:.5; 
 	}
 
 
