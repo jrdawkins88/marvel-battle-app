@@ -20,9 +20,9 @@
 	padding: 1em;
 
 	h2 {
+		font-family: 'AnimeAce Bold';
 		text-align: right;
 		margin: 0;
-		font-size: 2.25em;
 		width: 60%;
 		height: 30%;
 		float: right;
@@ -30,9 +30,18 @@
 
 
 	p {
+		font-family: 'AnimeAce Regular';
+		line-height: 1.25em;
 		height: 20%;
 		margin: 0;
 		clear: both;
+	}
+
+	span {
+		font-family: 'AnimeAce Regular';
+		float: right;
+		clear: right;
+		margin: .5em 3em;
 	}
 
 	.portrait {

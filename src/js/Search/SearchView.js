@@ -26,7 +26,7 @@ var SearchView = Backbone.View.extend({
     template: function () {
         return `
             <div class="list-region"></div>
-            <input class="starts-with">
+            <input class="starts-with" placeholder="Name starts with...">
             <button class="search-button">Search</button>
         `;
     },
