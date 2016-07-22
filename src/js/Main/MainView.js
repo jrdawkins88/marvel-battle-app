@@ -5,15 +5,14 @@ var Backbone = require('backbone');
 var SearchView = require('../Search/SearchView');
 var DetailView = require('../Details/DetailView');
 var BattleView = require('../Battle/BattleView');
-// var mainController = require('./mainController');
 
 var MainView = Backbone.View.extend({
 
 	className: 'main',
 
 	events: {
-		'click .fight-button': 'handleFightClick'
-		// 'click .header.small': 'handleClickHome'  //<--- trying to make the logo a link back to the home view
+		'click .fight-button': 'handleFightClick',
+		'click .header.small': 'handleClickHome'  //<--- trying to make the logo a link back to the home view
 	},
 
 	initialize: function (options) {
@@ -26,7 +25,7 @@ var MainView = Backbone.View.extend({
 		this.searchView = new SearchView();
 		this.battleView = new BattleView();
 
-		// 
+		// both detail views created initially
 		this.details = [
 			this.createDetailView(),
 			this.createDetailView()
@@ -39,6 +38,7 @@ var MainView = Backbone.View.extend({
 		this.searchView.render();
 		this.battleView.render();
 		this.$('.search-region').append(this.searchView.$el);
+		// there are 2 detail views, so append each
 		this.details.forEach(function (view) {
 			_this.$('.detail-region').append(view.$el);
 			view.render();
@@ -111,6 +111,12 @@ var MainView = Backbone.View.extend({
 		var left = this.details[0].model;
 		var right = this.details[1].model;
 
+		// TODO:
+		// hide the search view
+		this.searchView.close();
+		// hide the fight button
+		this.$('.fight-button').removeClass('active');
+
 		this.battleView.reset();
 
 		if (!left.stats.loaded) {
@@ -130,14 +136,14 @@ var MainView = Backbone.View.extend({
 	resetBattle: function () {
 		// reset function is defined in BattleView
 		this.battleView.reset();
-	}
+	},
 
-	// handleClickHome: function () {
-	// 	// changes the view to HomeView.
-	// 	// same as window.location.hash = 'main'  //<--- trying to make the logo a link back to the home view
-	// 	mainController.showHome();
-	// 	Backbone.history.navigate('');
-	// }
+	handleClickHome: function () {
+		// changes the view to HomeView.
+		// same as window.location.hash = 'main'  //<--- trying to make the logo a link back to the home view
+		Backbone.history.navigate('', { trigger: true });
+		
+	}
 
 });
 
