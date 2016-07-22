@@ -1,3 +1,7 @@
 .winner {
 	text-align: center;
 }
+
+.winner > img {
+	border: 2px solid $color-black;
+}
