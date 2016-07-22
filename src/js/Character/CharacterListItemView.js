@@ -38,7 +38,7 @@ var CharacterListItemView = Backbone.View.extend({
     template: function (data) {
         return `
             <img class="sm-image" src="${this.model.getThumbnail('standard_large')}">
-            <div>${data.name}</div>
+            <div class="thumb-name">${data.name}</div>
         `;
     },
 
