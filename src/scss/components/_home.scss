@@ -26,7 +26,6 @@
 		border: 0;
 		background-color: transparent;
 		background-repeat: no-repeat;
-		background-position: bottom;
 		width: 400px;
 		height: 150px;
 		background-image: url(images/start-button.png);
@@ -37,7 +36,7 @@
 	}
 
 	button.start:hover {
-		bottom: 10px;
+		bottom: 20px;
 		width: 450px;
 	}
 
