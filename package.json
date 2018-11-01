@@ -1,6 +1,10 @@
 {
   "name": "project-scaffold",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.11.4"
+  },
+  "private": true, 
   "description": "",
   "main": "server.js",
   "scripts": {
